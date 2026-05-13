@@ -1,0 +1,17 @@
+/* sample source for lexer testing */
+int x;
+float y;
+x = 42;
+y = 3.14;
+if (x == 0) {
+    return y;
+} else {
+    while (x != 0) {
+        x = x - 1;
+    }
+}
+// single-line comment
+function add(int a, int b) {
+    return a + b;
+}
+@ invalid_char
