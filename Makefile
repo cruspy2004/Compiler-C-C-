@@ -22,9 +22,15 @@ CC      = gcc
 CFLAGS  = -Wall -Wextra -g -I.
 LDFLAGS = -lm
 
-# On Windows with MSYS2/MinGW you may need: FLEX = win_flex  BISON = win_bison
-FLEX    = flex
-BISON   = bison
+# Windows (WinFlexBison installed via winget) — adjust path if different
+ifeq ($(OS),Windows_NT)
+    WINFB   = $(LOCALAPPDATA)/Microsoft/WinGet/Packages/WinFlexBison.win_flex_bison_Microsoft.Winget.Source_8wekyb3d8bbwe
+    FLEX    = "$(WINFB)/win_flex.exe"
+    BISON   = "$(WINFB)/win_bison.exe"
+else
+    FLEX    = flex
+    BISON   = bison
+endif
 
 # On Linux add -lfl; on Windows (no fl library) omit it.
 ifeq ($(OS),Windows_NT)
