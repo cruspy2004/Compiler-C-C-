@@ -34,7 +34,8 @@ ALNUM  [a-zA-Z0-9_]
 "("  { return '('; }
 ")"  { return ')'; }
 
-[ \t\r\n]+  { /* discard whitespace */ }
+[ \t\r]+  { /* discard spaces, tabs, carriage returns */ }
+\n        { return '\n'; }   /* newline terminates an expression */
 
 . { fprintf(stderr, "Lexical error at line %d: unexpected '%s'\n", yylineno, yytext); }
 

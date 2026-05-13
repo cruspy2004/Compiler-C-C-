@@ -32,6 +32,12 @@ int yydebug = 1;
 #endif
 %}
 
+/* Make ast.h available in the generated infix.tab.h so calc_lex.l can
+   include infix.tab.h without a forward-declaration problem. */
+%code requires {
+#include "../common/ast.h"
+}
+
 %union {
     double      fval;
     char       *str;

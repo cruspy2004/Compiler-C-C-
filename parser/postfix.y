@@ -27,6 +27,10 @@ static void npush(ASTNode *n) { node_stack[++ntop] = n; }
 static ASTNode *npop(void)    { return node_stack[ntop--]; }
 %}
 
+%code requires {
+#include "../common/ast.h"
+}
+
 %union {
     double      fval;
     char       *str;

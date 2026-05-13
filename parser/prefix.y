@@ -14,6 +14,10 @@ extern int  yylineno;
 void yyerror(const char *s);
 %}
 
+%code requires {
+#include "../common/ast.h"
+}
+
 %union {
     double      fval;
     char       *str;
