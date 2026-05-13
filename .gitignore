@@ -1,0 +1,38 @@
+# Build outputs
+postfix_eval
+postfix_eval.exe
+lexer_test
+infix_calc
+postfix_calc
+prefix_calc
+first_sets
+follow_sets
+ll1_table
+perf_compare
+compiler
+*.exe
+
+# Generated parser/lexer C files
+parser/infix.tab.c
+parser/infix.tab.h
+parser/postfix.tab.c
+parser/postfix.tab.h
+parser/prefix.tab.c
+parser/prefix.tab.h
+parser/calc_lex.yy.c
+lexer/lex_standalone.yy.c
+
+# Object files
+*.o
+
+# Pipeline output
+*.out
+*.out.c
+
+# LLVM IR (generated — kept if manually generated)
+# llvm/*.ll  <- keep these when generated
+
+# OS/editor junk
+.DS_Store
+Thumbs.db
+*.swp
